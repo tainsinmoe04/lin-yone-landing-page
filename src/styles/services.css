@@ -11,7 +11,11 @@
 .ly-services__heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 2.5rem; margin-bottom: clamp(2.75rem, 5vw, 4.75rem); }
 .ly-services__overline { margin: 0 0 1.4rem; color: #5c83ff; font-size: .65rem; font-weight: 600; letter-spacing: .19em; text-transform: uppercase; }
 .ly-services__heading h2 { margin: 0; font-size: clamp(3.4rem, 7.2vw, 7rem); font-weight: 500; line-height: .91; letter-spacing: -.075em; }
-.ly-services__heading > p { max-width: 320px; margin: 0 2vw .35rem 0; color: rgba(244,246,248,.6); font-size: .9rem; line-height: 1.7; }
+.ly-services__intro { display: flex; flex-direction: column; gap: 1.1rem; margin: 0 2vw .35rem 0; }
+.ly-services__intro > p { max-width: 320px; margin: 0; color: rgba(244,246,248,.6); font-size: .9rem; line-height: 1.7; }
+.ly-services__list { display: flex; flex-wrap: wrap; gap: .45rem .9rem; max-width: 340px; margin: 0; padding: 0; list-style: none; }
+.ly-services__list li { position: relative; padding-left: .85rem; color: rgba(244,246,248,.78); font-size: .72rem; line-height: 1.5; letter-spacing: .02em; }
+.ly-services__list li::before { position: absolute; left: 0; top: .52em; width: 4px; height: 4px; border-radius: 50%; background: #5c83ff; content: ''; }
 
 .ly-services__carousel { touch-action: pan-y; user-select: none; }
 .ly-services__stage { position: relative; padding-inline: 3rem; }

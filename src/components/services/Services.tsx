@@ -60,7 +60,14 @@ export default function Services({ language }: Props) {
           <p className="ly-services__overline">{text.servicesOverline}</p>
           <h2 id="ly-services-title">{text.servicesTitle.split('|')[0]}<br />{text.servicesTitle.split('|')[1]}</h2>
         </div>
-        <p>{text.servicesDescription}</p>
+        <div className="ly-services__intro">
+          <p>{text.servicesDescription}</p>
+          <ul className="ly-services__list">
+            {text.servicesList.map((service) => (
+              <li key={service}>{service}</li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div

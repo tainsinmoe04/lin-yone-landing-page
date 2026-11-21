@@ -19,7 +19,7 @@ export default function Hero({ language, onLanguageChange }: Props) {
           <p className="ly-hero__description">{text.heroDescription}</p>
           <div className="ly-hero__actions">
             <a className="ly-button ly-button--blue" href="#services">{text.explore} <span className="ly-directional-arrow" aria-hidden="true">→</span></a>
-            <a className="ly-button ly-button--blue" href="https://m.me/755203954343514" target="_blank" rel="noopener noreferrer">{text.requestQuote} <span className="ly-directional-arrow" aria-hidden="true">→</span></a>
+            <a className="ly-button ly-button--blue" href="https://m.me/755203954343514" target="_blank" rel="noopener noreferrer">{text.heroRequestQuote} <span className="ly-directional-arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
         <div className="ly-hero__visual">
