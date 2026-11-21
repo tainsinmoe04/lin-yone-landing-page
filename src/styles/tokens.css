@@ -1,0 +1,43 @@
+/* Lin Yone design tokens.
+   Monochrome identity: near-black and white, with the charcoal brand value.
+   The teal undertone is a lighting tint inside the near-black, not an accent
+   hue — no element in the UI may carry it as a foreground color. */
+
+:root {
+  /* Brand palette */
+  --ly-black: #000000;
+  --ly-charcoal: #1f1f1f;
+  --ly-white: #ffffff;
+
+  /* Scene: near-black with a faint teal undertone (lighting only) */
+  --ly-scene: #070c0e;
+  --ly-scene-deep: #040708;
+  --ly-teal-veil: rgba(26, 82, 84, 0.38);
+  --ly-teal-shadow: rgba(18, 54, 60, 0.3);
+
+  /* Foreground */
+  --ly-text: rgba(255, 255, 255, 1);
+  --ly-text-muted: rgba(255, 255, 255, 0.66);
+  --ly-text-faint: rgba(255, 255, 255, 0.4);
+  --ly-rule: rgba(255, 255, 255, 0.14);
+
+  /* Type */
+  --ly-font: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --ly-tracking-wide: 0.16em;
+  --ly-tracking-wider: 0.22em;
+
+  /* Motion — exponential ease-out, the house curve */
+  --ly-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ly-ease-inout: cubic-bezier(0.45, 0, 0.55, 1);
+  --ly-duration: 0.4s;
+  --ly-duration-slow: 1.3s;
+
+  /* Rhythm */
+  --ly-gutter: clamp(1.25rem, 3.5vw, 3.25rem);
+  --ly-nav-height: clamp(4.25rem, 9vh, 5.5rem);
+
+  /* z-index scale (systemic only) */
+  --ly-z-scene: 0;
+  --ly-z-content: 10;
+  --ly-z-nav: 20;
+}
