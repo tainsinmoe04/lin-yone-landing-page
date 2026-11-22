@@ -17,7 +17,7 @@ export default function About({ language }: Props) {
         <h2 id="ly-about-title">{text.aboutTitle.split('|')[0]}<br />{text.aboutTitle.split('|')[1]}</h2>
         <p>{text.aboutParagraphOne}</p>
         <p>{text.aboutParagraphTwo}</p>
-        <a className="ly-button ly-button--blue" href="#contact">{text.aboutCta} <span className="ly-directional-arrow" aria-hidden="true">→</span></a>
+        <a className="ly-button ly-button--about" href="#contact">{text.aboutCta} <span className="ly-directional-arrow" aria-hidden="true">→</span></a>
       </div>
     </section>
   );

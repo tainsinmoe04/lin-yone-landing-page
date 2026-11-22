@@ -5,10 +5,36 @@
   min-height: 100svh;
   padding-inline: var(--ly-gutter);
   overflow: hidden;
-  color: #101214;
-  background: #fff;
+  color: #f7f8fa;
+  background-color: #0b0908;
 }
 
+/* Stage 1 — the photograph, edge-to-edge from the very top, behind the
+   navigation, revealed with a quiet opacity fade. */
+.ly-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('/brand/hero-lin-yone-workspace.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 40%;
+  animation: ly-image-reveal .8s var(--ly-ease) both;
+}
+
+/* Subtle readability wash — left-weighted so the monitor stays the focal point. */
+.ly-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(8, 7, 6, .6) 0%, rgba(8, 7, 6, .26) 40%, rgba(8, 7, 6, .05) 64%, rgba(8, 7, 6, 0) 78%);
+}
+
+/* Navigation sits directly on the photograph — transparent, borderless. */
 .ly-nav {
   z-index: 3;
   display: grid;
@@ -18,7 +44,6 @@
   width: min(100%, 1560px);
   min-height: var(--ly-nav-height);
   margin-inline: auto;
-  border-bottom: 1px solid rgba(16, 18, 20, .1);
 }
 
 .ly-nav__home {
@@ -31,6 +56,8 @@
 .ly-nav__home img {
   width: clamp(68px, 6vw, 88px);
   height: auto;
+  /* The mark ships black; render it white so it reads on the dark glass. */
+  filter: brightness(0) invert(1);
 }
 
 .ly-nav__actions {
@@ -42,17 +69,18 @@
 
 .ly-nav__links { display: flex; gap: clamp(1.25rem, 3vw, 3.2rem); margin: 0; padding: 0; list-style: none; }
 .ly-nav__links a,
-.ly-nav__cta { color: #25282c; font-size: .75rem; text-decoration: none; transition: color .16s ease-out, background-color .16s ease-out, border-color .16s ease-out; }
+.ly-nav__cta { color: rgba(247, 248, 250, .9); font-size: .75rem; text-decoration: none; transition: color .16s ease-out, background-color .16s ease-out; }
 .ly-nav__links a:hover,
-.ly-nav__cta:hover { color: #1556f5; }
-.ly-nav__cta { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 42px; padding: 0 .8rem; border: 1px solid rgba(16,18,20,.2); border-radius: 3px; white-space: nowrap; font-weight: 600; }
-.ly-nav__cta:hover { border-color: #1556f5; }
+.ly-nav__cta:hover { color: var(--ly-accent); }
+.ly-nav__cta { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 42px; padding: 0 .95rem; border: 0; border-radius: 3px; background: rgba(255, 255, 255, .1); white-space: nowrap; font-weight: 600; }
+.ly-nav__cta { color: var(--ly-cta-text); background: var(--ly-cta); }
+.ly-nav__cta:hover { color: var(--ly-cta-text); background: var(--ly-cta-hover); }
 
-.ly-language-switch { display: inline-flex; align-items: center; gap: .32rem; white-space: nowrap; color: #92979b; font-size: .65rem; letter-spacing: .08em; }
-.ly-language-switch button { padding: .35rem .15rem; border: 0; color: #757a7f; background: transparent; font: inherit; cursor: pointer; transition: color .2s ease; }
-.ly-language-switch button.is-active { color: #1556f5; font-weight: 700; }
-.ly-language-switch button:hover { color: #1556f5; }
-.ly-language-switch button:focus-visible { outline: 2px solid #1556f5; outline-offset: 2px; }
+.ly-language-switch { display: inline-flex; align-items: center; gap: .32rem; white-space: nowrap; color: rgba(244, 246, 248, .6); font-size: .65rem; letter-spacing: .08em; }
+.ly-language-switch button { padding: .35rem .15rem; border: 0; color: rgba(244, 246, 248, .62); background: transparent; font: inherit; cursor: pointer; transition: color .2s ease; }
+.ly-language-switch button.is-active { color: var(--ly-accent); font-weight: 700; }
+.ly-language-switch button:hover { color: var(--ly-accent); }
+.ly-language-switch button:focus-visible { outline: 2px solid var(--ly-accent); outline-offset: 2px; }
 
 .ly-hero__content {
   display: grid;
@@ -67,64 +95,106 @@
 }
 
 .ly-hero__copy { position: relative; z-index: 2; max-width: 540px; padding-bottom: 2rem; }
-.ly-hero__location,
-.ly-hero__visual-index { font-size: .66rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
-.ly-hero__location { margin: 0 0 1.4rem; color: #5b6065; }
+.ly-hero__foreground { display: none; }
+.ly-hero__support { display: contents; }
+.ly-hero__location { font-size: .66rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.ly-hero__location { margin: 0 0 1.4rem; color: rgba(244, 246, 248, .72); }
 .ly-hero__copy h1 { margin: 0; font-size: clamp(4.7rem, 8vw, 8.7rem); font-weight: 600; line-height: .86; letter-spacing: -.085em; }
-.ly-hero__description { max-width: 410px; margin: 1.5rem 0 0; color: #555b60; font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.65; }
+.ly-hero__description { max-width: 410px; margin: 1.5rem 0 0; color: rgba(244, 246, 248, .8); font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.65; }
 .ly-hero__actions { display: flex; align-items: center; flex-wrap: wrap; gap: .8rem 1.7rem; margin-top: 1.8rem; }
 .ly-button { display: inline-flex; align-items: center; justify-content: center; gap: .75rem; min-height: 48px; padding: 0 1.1rem; border-radius: 3px; font-size: .76rem; font-weight: 600; text-decoration: none; transition: transform .14s ease-out, background-color .16s ease-out, color .16s ease-out, border-color .16s ease-out; }
 .ly-button:hover { transform: translateY(-1px); }
 .ly-button:active { transform: scale(.97); transition-duration: .1s; }
-.ly-button:focus-visible, .ly-nav__cta:focus-visible { outline: 2px solid #1556f5; outline-offset: 3px; }
-.ly-button--blue { border: 1px solid #1556f5; color: #fff; background: #1556f5; }
-.ly-button--blue:hover { border-color: #0c43d0; background: #0c43d0; }
+.ly-button:focus-visible, .ly-nav__cta:focus-visible { outline: 2px solid var(--ly-cta); outline-offset: 3px; }
+.ly-button--primary,
+.ly-button--about { border: 1px solid var(--ly-cta); color: var(--ly-cta-text); background: var(--ly-cta); }
+.ly-button--primary:hover,
+.ly-button--about:hover { border-color: var(--ly-cta-hover); background: var(--ly-cta-hover); }
 .ly-button--text { padding-inline: .2rem; color: #101214; }
-.ly-button--text .ly-directional-arrow { color: #1556f5; }
+.ly-button--text .ly-directional-arrow { color: var(--ly-accent-hover); }
 .ly-directional-arrow { display: inline-block; flex: 0 0 auto; font-family: var(--ly-font); font-size: 1rem; font-weight: 400; line-height: 1; letter-spacing: 0; }
 
-.ly-hero__visual { position: relative; display: grid; place-items: center; min-width: 0; animation: ly-printer-arrive 1.25s cubic-bezier(.2,.75,.25,1) .08s both; }
-.ly-hero__visual img { width: 104%; max-width: none; height: auto; object-fit: contain; }
-.ly-hero__visual-index { position: absolute; right: 3%; bottom: 1%; color: #6a6d70; }
-.ly-hero__scroll { display: flex; align-items: center; gap: .7rem; width: min(100%, 1560px); margin: auto auto 1.7rem; color: #70757a; font-size: .65rem; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
-.ly-hero__scroll span { width: 25px; height: 1px; background: #1556f5; }
+.ly-hero__scroll { position: relative; z-index: 2; display: flex; align-items: center; gap: .7rem; width: min(100%, 1560px); margin: auto auto 1.7rem; color: rgba(244, 246, 248, .68); font-size: .65rem; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+.ly-hero__scroll span { width: 25px; height: 1px; background: var(--ly-accent); }
 
-@keyframes ly-printer-arrive { from { opacity: 0; transform: translate3d(0, 28px, 0) scale(.985); } to { opacity: 1; transform: none; } }
+/* ------------------------------------------------------------
+   Coordinated entrance: subtle offsets, overlapping timing, no layout shift.
+   ------------------------------------------------------------ */
+@keyframes ly-image-reveal { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ly-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes ly-from-left { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes ly-from-right { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes ly-headline-reveal {
+  from { opacity: 0; transform: translateY(22px); clip-path: inset(100% -12% 0 -12%); }
+  to { opacity: 1; transform: translateY(0); clip-path: inset(-15% -12% -25% -12%); }
+}
+
+.ly-nav__home, .ly-nav__links, .ly-nav__actions { animation: ly-rise 780ms var(--ly-hero-enter-ease) both; }
+.ly-hero__location { animation: ly-from-right 780ms var(--ly-hero-enter-ease) 40ms both; }
+.ly-hero__copy h1 { animation: ly-headline-reveal 900ms var(--ly-hero-enter-ease) 90ms both; }
+.ly-hero__description { animation: ly-from-left 780ms var(--ly-hero-enter-ease) 150ms both; }
+.ly-hero__actions .ly-button:nth-child(1) { animation: ly-rise 700ms var(--ly-hero-enter-ease) 210ms both; }
+.ly-hero__actions .ly-button:nth-child(2) { animation: ly-rise 700ms var(--ly-hero-enter-ease) 270ms both; }
+.ly-hero__scroll { animation: ly-from-right 760ms var(--ly-hero-enter-ease) 180ms both; }
+
+/* Portrait tablets and phones: even top-to-bottom wash so copy stays
+   legible where it crosses the bright monitor lettering. */
+@media (max-width: 1000px) {
+  .ly-hero::before { background: linear-gradient(180deg, rgba(8, 7, 6, .54) 0%, rgba(8, 7, 6, .44) 50%, rgba(8, 7, 6, .5) 100%); }
+}
 
 @media (max-width: 800px) {
   .ly-nav { min-height: 76px; }
+  .ly-hero::after { background-position: center center; }
   .ly-hero__content { grid-template-columns: 1fr; gap: .6rem; min-height: unset; padding-block: clamp(2.75rem, 5.5vw, 3.5rem) 1.5rem; }
   .ly-hero__copy { max-width: 620px; padding-bottom: 0; }
   .ly-hero__copy h1 { font-size: clamp(4.7rem, 15vw, 7.2rem); }
-  .ly-hero__visual { width: min(100%, 720px); justify-self: center; margin-top: -1rem; }
-  .ly-hero__visual img { width: 100%; }
-  .ly-hero__visual-index { right: 2%; bottom: -1rem; }
   .ly-hero__scroll { margin-top: 1rem; }
 }
 
 @media (max-width: 684px) {
-  .ly-nav { grid-template-columns: 1fr auto; gap: .65rem; padding-block: .65rem; }
-  .ly-nav nav { grid-column: 1 / -1; grid-row: 2; justify-self: center; }
-  .ly-nav__links { flex-wrap: wrap; justify-content: center; gap: .45rem clamp(.65rem, 4.3vw, 1.45rem); }
-  .ly-nav__actions { grid-column: 2; grid-row: 1; gap: .55rem; }
+  .ly-hero__content { align-items: start; }
+  .ly-nav {
+    width: calc(100% + 1rem);
+    margin-inline: -.5rem;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: .35rem;
+    padding-block: .65rem;
+  }
+  .ly-nav__home { grid-column: 1; grid-row: 1; }
+  .ly-nav nav { grid-column: 2; grid-row: 1; justify-self: stretch; min-width: 0; }
+  .ly-nav__links { flex-wrap: nowrap; justify-content: space-evenly; gap: .12rem; width: 100%; }
+  .ly-nav__links li { flex: 1 1 0; min-width: 0; text-align: center; }
+  .ly-nav__links a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding-inline: .05rem; font-size: .64rem; white-space: nowrap; }
+  .ly-nav__actions { grid-column: 3; grid-row: 1; gap: .15rem; }
+  .ly-nav__cta { display: none; }
+  .ly-language-switch { gap: .08rem; font-size: .58rem; }
+  .ly-language-switch button { min-width: 18px; min-height: 32px; padding: .25rem .04rem; }
+  html[lang='my'] .ly-nav__links a { font-size: clamp(.52rem, 2.2vw, .62rem); }
+  html[lang='my'] .ly-nav__links { gap: 0; }
+  .ly-hero::before { background: linear-gradient(90deg, rgba(8, 7, 6, .34) 0%, rgba(8, 7, 6, .2) 45%, rgba(8, 7, 6, .04) 72%, transparent 100%); }
+  .ly-hero::after {
+    background-image: url('/brand/hero-lin-yone-workspace-mobile.jpg'), url('/brand/hero-lin-yone-workspace.jpg');
+    background-size: cover, cover;
+    background-position: center 55%, center 40%;
+  }
+  .ly-hero__copy { transform: translateY(14px); }
 }
 
 @media (max-width: 560px) {
   .ly-hero { padding-inline: var(--ly-gutter); }
-  .ly-nav { grid-template-columns: 1fr auto; gap: .65rem; padding-block: .65rem; }
-  .ly-nav__home img { width: clamp(64px, 19vw, 76px); }
-  .ly-nav nav { grid-column: 1 / -1; grid-row: 2; justify-self: center; }
-  .ly-nav__links { flex-wrap: wrap; justify-content: center; gap: .45rem clamp(.65rem, 4.3vw, 1.45rem); }
-  .ly-nav__links a, .ly-nav__cta { font-size: .68rem; }
-  .ly-nav__actions { grid-column: 2; grid-row: 1; gap: .55rem; }
-  .ly-language-switch { gap: .2rem; font-size: .6rem; }
-  .ly-language-switch button { padding-inline: .08rem; }
-  .ly-hero__content { padding-top: 2.5rem; }
+  .ly-nav { grid-template-columns: auto minmax(0, 1fr) auto; gap: .28rem; }
+  .ly-nav__home img { width: clamp(50px, 14vw, 60px); }
+  .ly-nav__links a, .ly-nav__cta { font-size: .62rem; }
+  .ly-nav__actions { grid-column: 3; grid-row: 1; gap: .08rem; }
+  .ly-language-switch { gap: .06rem; font-size: .56rem; }
+  .ly-language-switch button { min-width: 17px; padding-inline: .02rem; }
+  html[lang='my'] .ly-nav__links a { font-size: clamp(.5rem, 2.1vw, .58rem); }
+  .ly-hero__content { padding-top: 2.9rem; }
   .ly-hero__copy h1 { font-size: clamp(4.6rem, 18vw, 6.3rem); }
   .ly-hero__description { margin-top: 1.25rem; font-size: .98rem; }
   .ly-hero__actions { gap: .6rem 1rem; margin-top: 1.5rem; }
   .ly-button { min-height: 48px; padding-inline: .9rem; }
-  .ly-hero__visual { width: 108%; margin-left: -4%; }
 }
 
 html[lang='my'] body {
@@ -196,15 +266,151 @@ html[lang='my'] .ly-nav__cta {
 }
 
 @media (max-width: 560px) {
-  html[lang='my'] .ly-nav__links { gap: clamp(.65rem, 3.2vw, 1rem); }
-  html[lang='my'] .ly-nav__links a { font-size: .66rem; }
+  html[lang='my'] .ly-nav__links { gap: 0; }
+  html[lang='my'] .ly-nav__links a { font-size: clamp(.5rem, 2.1vw, .58rem); }
   html[lang='my'] .ly-nav__cta { font-size: .64rem; }
   .ly-nav__cta { min-height: 40px; padding-inline: .55rem; }
-  .ly-language-switch button { min-width: 2.75rem; min-height: 2.75rem; }
+  .ly-language-switch button { min-width: 17px; min-height: 32px; padding-inline: .02rem; }
+  html[lang='my'] .ly-language-switch button { min-width: 17px; min-height: 32px; padding-inline: .02rem; }
   html[lang='my'] .ly-hero__copy h1 { font-size: clamp(3.6rem, 15vw, 5.5rem); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ly-hero__visual { animation: none; }
+  .ly-hero::after,
+  .ly-nav__home,
+  .ly-nav__links,
+  .ly-nav__actions,
+  .ly-hero__location,
+  .ly-hero__copy h1,
+  .ly-hero__description,
+  .ly-hero__actions .ly-button:nth-child(1),
+  .ly-hero__actions .ly-button:nth-child(2),
+  .ly-hero__scroll { animation: none; }
   .ly-button, .ly-nav__cta { transition: none; }
+}
+
+/* Mobile layered composition aligned to the supplied reference screenshot. */
+@media (max-width: 684px) {
+  .ly-hero::after {
+    background-image: url('/brand/hero-curtain-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .ly-hero__content {
+    display: block;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ly-hero__copy { display: contents; }
+  .ly-hero__support { display: contents; }
+
+  .ly-hero__location {
+    position: absolute;
+    z-index: 3;
+    top: 26%;
+    left: var(--ly-gutter);
+    margin: 0;
+  }
+
+  .ly-hero__copy h1 {
+    position: absolute;
+    z-index: 1;
+    top: calc(33% + clamp(3.4rem, 7.7vw, 3.8rem));
+    left: 50vw;
+    right: auto;
+    width: max-content;
+    max-width: calc(100vw - var(--ly-gutter) - var(--ly-gutter));
+    font-size: clamp(5.2rem, 21vw, 5.65rem);
+    line-height: .86;
+    letter-spacing: -.08em;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    transform-origin: center calc(100% + 2svh + 3rem - clamp(3.4rem, 7.7vw, 3.8rem) + 33.4vw - .86em);
+    animation: ly-mobile-headline-center-expand 1.6s cubic-bezier(.22, 1, .36, 1) 60ms both;
+  }
+
+  @keyframes ly-mobile-headline-center-expand {
+    from { opacity: 0; transform: translateX(-50%) scale(0); }
+    to { opacity: 1; transform: translateX(-50%) scale(1); }
+  }
+
+  .ly-hero__description {
+    position: absolute;
+    z-index: 3;
+    top: 15%;
+    right: var(--ly-gutter);
+    width: min(39vw, 11rem);
+    max-width: none;
+    margin: 0;
+    font-size: .7rem;
+    line-height: 1.45;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, .3);
+  }
+
+  .ly-hero__actions {
+    position: absolute;
+    z-index: 4;
+    top: 82%;
+    right: var(--ly-gutter);
+    left: var(--ly-gutter);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 0;
+    gap: .5rem;
+  }
+
+  .ly-hero__actions .ly-button {
+    min-height: 40px;
+    padding-inline: .65rem;
+    gap: .4rem;
+    font-size: .62rem;
+    white-space: nowrap;
+  }
+
+  .ly-hero__foreground {
+    position: absolute;
+    z-index: 2;
+    top: calc(35% + 3rem);
+    left: 50vw;
+    display: block;
+    width: 114vw;
+    max-width: none;
+    height: auto;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .ly-hero__scroll {
+    z-index: 5;
+    justify-content: center;
+    width: 100%;
+    margin: auto 0 1.7rem;
+  }
+
+  html[lang='my'] .ly-hero__copy h1 {
+    top: calc(33% + .75rem);
+    font-size: clamp(5.4rem, 25vw, 6.8rem);
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: none;
+    transform-origin: center calc(100% + 2svh + 2.25rem + 33.4vw - 1.2em);
+  }
+
+  html[lang='my'] .ly-hero__actions .ly-button { font-size: .58rem; padding-inline: .45rem; }
+}
+
+@media (max-width: 684px) and (prefers-reduced-motion: reduce) {
+  .ly-hero__copy h1 {
+    animation: none;
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
 }

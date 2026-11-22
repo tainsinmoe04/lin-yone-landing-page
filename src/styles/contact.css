@@ -7,10 +7,10 @@
 .ly-contact__main,
 .ly-contact__bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; width: min(100%, 1560px); margin-inline: auto; }
 .ly-contact__main { padding-bottom: clamp(2.75rem, 4.5vw, 4rem); }
-.ly-contact__overline { margin: 0 0 1.35rem; color: #6387ff; font-size: .64rem; font-weight: 600; letter-spacing: .19em; text-transform: uppercase; }
+.ly-contact__overline { margin: 0 0 1.35rem; color: var(--ly-accent); font-size: .64rem; font-weight: 600; letter-spacing: .19em; text-transform: uppercase; }
 .ly-contact__main h2 { margin: 0; font-size: clamp(4rem, 9vw, 8.5rem); font-weight: 500; line-height: .9; letter-spacing: -.08em; }
-.ly-contact__cta { display: inline-flex; align-items: center; justify-content: space-between; gap: .75rem; width: fit-content; min-width: 210px; min-height: 48px; padding: 0 1rem; border: 1px solid #1556f5; border-radius: 3px; color: #fff; background: #1556f5; font-size: .76rem; font-weight: 600; text-decoration: none; transition: background-color .16s ease-out, border-color .16s ease-out, transform .14s ease-out; }
-.ly-contact__cta:hover { border-color: #0d43cc; background: #0d43cc; transform: translateY(-1px); }
+.ly-contact__cta { display: inline-flex; align-items: center; justify-content: space-between; gap: .75rem; width: fit-content; min-width: 210px; min-height: 48px; padding: 0 1rem; border: 1px solid var(--ly-cta); border-radius: 3px; color: var(--ly-cta-text); background: var(--ly-cta); font-size: .76rem; font-weight: 600; text-decoration: none; transition: background-color .16s ease-out, border-color .16s ease-out, transform .14s ease-out; }
+.ly-contact__cta:hover { border-color: var(--ly-cta-contact-hover); background: var(--ly-cta-contact-hover); transform: translateY(-1px); }
 .ly-contact__cta:active { transform: scale(.97); transition-duration: .1s; }
 .ly-contact__cta:focus-visible, .ly-contact__top:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 .ly-contact__cta .ly-directional-arrow { font-size: 1rem; }
@@ -29,9 +29,9 @@
 .ly-contact__method--address .ly-contact__method-link { align-items: flex-start; }
 .ly-contact__info { display: grid; align-content: start; gap: .55rem; color: rgba(255,255,255,.7); font-size: .72rem; line-height: 1.8; }
 .ly-contact__info p { margin: 0; }
-.ly-contact__info i { padding-inline: .35em; color: #6387ff; font-style: normal; }
+.ly-contact__info i { padding-inline: .35em; color: var(--ly-accent); font-style: normal; }
 .ly-contact__top { display: inline-flex; align-items: center; gap: .45rem; width: fit-content; min-height: 40px; color: rgba(255,255,255,.74); font-size: .7rem; text-decoration: none; }
-.ly-contact__top:hover { color: #7795ff; }
+.ly-contact__top:hover { color: var(--ly-accent); }
 .ly-contact__copyright { width: min(100%, 1560px); margin: 0 auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.36); font-size: .6rem; letter-spacing: .08em; }
 
 html[lang='my'] .ly-contact__main { align-items: center; }

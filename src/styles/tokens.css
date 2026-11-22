@@ -8,6 +8,15 @@
   --ly-black: #000000;
   --ly-charcoal: #1f1f1f;
   --ly-white: #ffffff;
+  --ly-accent: #d8c7a5;
+  --ly-accent-hover: #c6b28b;
+  --ly-accent-ink: #111416;
+  --ly-cta: #1556f5;
+  --ly-cta-hover: #0c43d0;
+  --ly-cta-contact-hover: #0d43cc;
+  --ly-cta-text: #ffffff;
+  --ly-focus-dark: #55472f;
+  --ly-about-surface: #f7f5f1;
 
   /* Scene: near-black with a faint teal undertone (lighting only) */
   --ly-scene: #070c0e;
@@ -31,6 +40,8 @@
   --ly-ease-inout: cubic-bezier(0.45, 0, 0.55, 1);
   --ly-duration: 0.4s;
   --ly-duration-slow: 1.3s;
+  --ly-hero-enter-duration: 780ms;
+  --ly-hero-enter-ease: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Rhythm */
   --ly-gutter: clamp(1.25rem, 3.5vw, 3.25rem);

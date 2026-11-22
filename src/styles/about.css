@@ -1,15 +1,14 @@
 .ly-about {
   display: grid;
-  grid-template-columns: 1.08fr .92fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: clamp(2.5rem, 5vw, 5rem);
-  min-height: 760px;
-  padding: clamp(4.5rem, 7vw, 7rem) max(var(--ly-gutter), calc((100% - 1560px) / 2));
+  padding: clamp(3rem, 5vw, 5rem) max(var(--ly-gutter), calc((100% - 1560px) / 2));
   color: #111416;
-  background: #fff;
+  background: var(--ly-about-surface);
 }
 
-.ly-about__visual { position: relative; min-width: 0; aspect-ratio: 2 / 3; }
+.ly-about__visual { position: relative; justify-self: center; width: min(100%, 420px); height: min(62vw, 600px); min-width: 0; }
 .ly-about__visual img {
   display: block;
   width: 100%;
@@ -22,14 +21,14 @@
 }
 .ly-about__visual span { position: absolute; left: 0; bottom: 0; color: #74797c; font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; }
 .ly-about__copy { max-width: 540px; }
-.ly-about__overline { margin: 0 0 1.4rem; color: #1556f5; font-size: .65rem; font-weight: 600; letter-spacing: .19em; text-transform: uppercase; }
-.ly-about__copy h2 { margin: 0 0 1.7rem; font-size: clamp(3.3rem, 6.3vw, 6rem); font-weight: 500; line-height: .94; letter-spacing: -.075em; }
+.ly-about__overline { margin: 0 0 1.2rem; color: var(--ly-focus-dark); font-size: .65rem; font-weight: 600; letter-spacing: .19em; text-transform: uppercase; }
+.ly-about__copy h2 { margin: 0 0 1.4rem; font-size: clamp(2.8rem, 4.8vw, 4.5rem); font-weight: 500; line-height: .98; letter-spacing: -.065em; }
 .ly-about__copy > p:not(.ly-about__overline) { max-width: 440px; margin: 0 0 1rem; color: #5a6063; font-size: .94rem; line-height: 1.8; }
 .ly-about__copy .ly-button { margin-top: 1.3rem; }
 
 @media (min-width: 685px) and (max-width: 800px) {
   .ly-about { grid-template-columns: .95fr 1.05fr; gap: 2rem; min-height: unset; padding-block: 4rem; }
-  .ly-about__visual { width: 100%; }
+  .ly-about__visual { width: min(100%, 360px); height: min(70vw, 500px); }
   .ly-about__copy h2 { margin-bottom: 1.2rem; font-size: clamp(2.8rem, 5.5vw, 3.35rem); }
   .ly-about__copy > p:not(.ly-about__overline) { margin-bottom: .75rem; }
 }
