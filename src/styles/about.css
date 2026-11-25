@@ -19,17 +19,17 @@
     linear-gradient(to bottom, transparent 0%, #000 6%, #000 94%, transparent 100%);
   mask-composite: intersect;
 }
-.ly-about__visual span { position: absolute; left: 0; bottom: 0; color: #74797c; font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; }
+.ly-about__visual span { position: absolute; left: 0; bottom: 0; color: #74797c; font-size: .64rem; letter-spacing: .18em; text-transform: uppercase; }
 .ly-about__copy { max-width: 540px; }
-.ly-about__overline { margin: 0 0 1.2rem; color: var(--ly-focus-dark); font-size: .65rem; font-weight: 600; letter-spacing: .19em; text-transform: uppercase; }
-.ly-about__copy h2 { margin: 0 0 1.4rem; font-size: clamp(2.8rem, 4.8vw, 4.5rem); font-weight: 500; line-height: .98; letter-spacing: -.065em; }
-.ly-about__copy > p:not(.ly-about__overline) { max-width: 440px; margin: 0 0 1rem; color: #5a6063; font-size: .94rem; line-height: 1.8; }
+.ly-about__overline { margin: 0 0 1.2rem; color: var(--ly-focus-dark); font-size: .7rem; font-weight: 600; letter-spacing: .19em; text-transform: uppercase; }
+.ly-about__copy h2 { margin: 0 0 1.4rem; font-size: clamp(2.9rem, 4.9vw, 4.65rem); font-weight: 500; line-height: .98; letter-spacing: -.065em; }
+.ly-about__copy > p:not(.ly-about__overline) { max-width: 440px; margin: 0 0 1rem; color: #5a6063; font-size: 1rem; line-height: 1.8; }
 .ly-about__copy .ly-button { margin-top: 1.3rem; }
 
 @media (min-width: 685px) and (max-width: 800px) {
   .ly-about { grid-template-columns: .95fr 1.05fr; gap: 2rem; min-height: unset; padding-block: 4rem; }
   .ly-about__visual { width: min(100%, 360px); height: min(70vw, 500px); }
-  .ly-about__copy h2 { margin-bottom: 1.2rem; font-size: clamp(2.8rem, 5.5vw, 3.35rem); }
+  .ly-about__copy h2 { margin-bottom: 1.2rem; font-size: clamp(2.9rem, 5.6vw, 3.45rem); }
   .ly-about__copy > p:not(.ly-about__overline) { margin-bottom: .75rem; }
 }
 
@@ -38,5 +38,22 @@
   .ly-about__visual { width: min(100%, 520px); margin-inline: auto; }
   .ly-about__visual span { bottom: -.2rem; }
   .ly-about__copy { width: min(100%, 600px); max-width: none; margin-inline: auto; }
-  .ly-about__copy h2 { font-size: clamp(3.2rem, 10vw, 5rem); }
+  .ly-about__copy h2 { font-size: clamp(3.25rem, 10.1vw, 5.1rem); }
+}
+
+html[lang='my'] .ly-about__visual span,
+html[lang='my'] .ly-about__overline { font-size: .78rem; letter-spacing: 0; }
+
+html[lang='my'] .ly-about__copy h2 {
+  font-size: clamp(2rem, 4.8vw, 4.25rem);
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+html[lang='my'] .ly-about__copy > p:not(.ly-about__overline) { font-size: 1rem; line-height: 1.8; }
+html[lang='my'] .ly-about__copy .ly-button { font-size: .9rem; line-height: 1.5; }
+
+@media (max-width: 684px) {
+  html[lang='my'] .ly-about__copy h2 { font-size: clamp(1.75rem, 7vw, 2.8rem); }
 }
