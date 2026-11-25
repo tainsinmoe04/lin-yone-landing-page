@@ -417,8 +417,8 @@ html[lang='my'] .ly-nav__cta {
   .ly-hero__scroll::after { width: 25px; height: 1px; background: var(--ly-accent); content: ''; }
 
   .ly-hero[data-language='my'] .ly-hero__copy h1 {
-    top: 21.5%;
-    font-size: clamp(7.4rem, 12vw, 20.5rem);
+    top: 19.5%;
+    font-size: clamp(6.5rem, 10.5vw, 18rem);
     line-height: 1.1;
     letter-spacing: 0;
     text-transform: none;
@@ -434,7 +434,7 @@ html[lang='my'] .ly-nav__cta {
   .ly-hero__foreground { top: calc(36svh - 7.77vw); width: clamp(26rem, 62vw, 100vw); }
   .ly-hero__location { top: 16%; left: max(var(--ly-gutter), 7vw); }
   .ly-hero__copy h1 { top: 26.5%; font-size: clamp(6.5rem, 13vw, 9rem); }
-  .ly-hero[data-language='my'] .ly-hero__copy h1 { top: 24.5%; font-size: clamp(6rem, 12vw, 8.4rem); }
+  .ly-hero[data-language='my'] .ly-hero__copy h1 { top: 22.5%; font-size: clamp(5.3rem, 10.5vw, 7.4rem); }
   .ly-hero__description { top: 11%; right: 5%; width: clamp(17rem, 28vw, 21rem); font-size: clamp(.95rem, 1.45vw, 1.1rem); }
   .ly-hero__actions { bottom: 10%; gap: clamp(.8rem, 2vw, 1.5rem); }
   .ly-hero__actions .ly-button { min-width: clamp(10.5rem, 17vw, 12rem); padding-inline: .8rem; font-size: clamp(.85rem, 1.1vw, 1rem); }
