@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lin-yone-landing-page.vercel.app/sitemap.xml

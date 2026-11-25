@@ -5,14 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Lin Yone Computer Graphic — a premium creative and printing studio."
+      content="Lin Yone Computer Graphic — computer graphic design and printing services in Yangon, Myanmar. Business cards, posters, stickers, packaging, and branding."
     />
     <meta name="theme-color" content="#070c0e" />
+    <link rel="canonical" href="https://lin-yone-landing-page.vercel.app/" />
+    <style>
+      html,
+      body,
+      #root {
+        min-height: 100vh;
+        background-color: #070c0e;
+      }
+
+      body {
+        margin: 0;
+      }
+    </style>
+    <link rel="preload" as="image" href="/brand/hero-curtain-bg.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/brand/hero-workspace-foreground.webp" fetchpriority="high" />
+    <link rel="preload" href="./src/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./src/assets/fonts/noto-sans-myanmar-ui.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="./src/assets/fonts/myanmar-khyay.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <title>Lin Yone — Computer Graphic &amp; Printing</title>
+    <title>Lin Yone — Computer Graphic &amp; Printing Service in Yangon</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lin Yone Computer Graphic" />
+    <meta property="og:title" content="Lin Yone — Computer Graphic &amp; Printing Service in Yangon" />
+    <meta
+      property="og:description"
+      content="Lin Yone Computer Graphic — computer graphic design and printing services in Yangon, Myanmar. Business cards, posters, stickers, packaging, and branding."
+    />
+    <meta property="og:url" content="https://lin-yone-landing-page.vercel.app/" />
+    <meta property="og:image" content="https://lin-yone-landing-page.vercel.app/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lin Yone Computer Graphic — computer graphic and printing services in Yangon" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lin Yone — Computer Graphic &amp; Printing Service in Yangon" />
+    <meta
+      name="twitter:description"
+      content="Lin Yone Computer Graphic — computer graphic design and printing services in Yangon, Myanmar. Business cards, posters, stickers, packaging, and branding."
+    />
+    <meta name="twitter:image" content="https://lin-yone-landing-page.vercel.app/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Lin Yone Computer Graphic — computer graphic and printing services in Yangon" />
+
+    <!-- Structured data (verified business information only) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://lin-yone-landing-page.vercel.app/#business",
+            "name": "Lin Yone Computer Graphic",
+            "description": "Lin Yone Computer Graphic — computer graphic design and printing services in Yangon, Myanmar. Business cards, posters, stickers, packaging, and branding.",
+            "url": "https://lin-yone-landing-page.vercel.app/",
+            "logo": "https://lin-yone-landing-page.vercel.app/brand/lin-yone-wordmark.webp",
+            "image": "https://lin-yone-landing-page.vercel.app/og-image.jpg",
+            "telephone": "+959982386012",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "No. 170, 35th Street, Middle Block, Kyauktada Township",
+              "addressLocality": "Yangon",
+              "addressCountry": "MM"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Yangon"
+            },
+            "sameAs": [
+              "https://www.facebook.com/profile.php?id=61578625658873"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://lin-yone-landing-page.vercel.app/#website",
+            "url": "https://lin-yone-landing-page.vercel.app/",
+            "name": "Lin Yone Computer Graphic",
+            "inLanguage": ["en", "my"],
+            "publisher": {
+              "@id": "https://lin-yone-landing-page.vercel.app/#business"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://lin-yone-landing-page.vercel.app/#webpage",
+            "url": "https://lin-yone-landing-page.vercel.app/",
+            "name": "Lin Yone — Computer Graphic & Printing Service in Yangon",
+            "isPartOf": {
+              "@id": "https://lin-yone-landing-page.vercel.app/#website"
+            },
+            "about": {
+              "@id": "https://lin-yone-landing-page.vercel.app/#business"
+            },
+            "inLanguage": ["en", "my"]
+          },
+          {
+            "@type": "Service",
+            "name": "Computer Graphic & Printing Service",
+            "serviceType": "Computer graphic design and printing services",
+            "provider": {
+              "@id": "https://lin-yone-landing-page.vercel.app/#business"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Yangon"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

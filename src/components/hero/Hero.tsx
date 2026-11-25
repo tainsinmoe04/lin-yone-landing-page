@@ -8,7 +8,7 @@ export default function Hero({ language, onLanguageChange }: Props) {
   const text = copy[language];
 
   return (
-    <section className="ly-hero" id="top" aria-labelledby="ly-hero-title">
+    <section className="ly-hero" data-language={language} id="top" aria-labelledby="ly-hero-title">
       <HeroNavigation language={language} onLanguageChange={onLanguageChange} />
       <div className="ly-hero__content">
         <div className="ly-hero__copy">
@@ -25,11 +25,12 @@ export default function Hero({ language, onLanguageChange }: Props) {
       </div>
       <img
         className="ly-hero__foreground"
-        src="/brand/hero-workspace-foreground.png"
+        src="/brand/hero-workspace-foreground.webp"
         alt=""
         aria-hidden="true"
         width="1196"
         height="1315"
+        fetchPriority="high"
       />
       <a className="ly-hero__scroll" href="#services"><span /> {text.scroll}</a>
     </section>

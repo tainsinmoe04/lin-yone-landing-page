@@ -2,8 +2,8 @@ export type Language = 'en' | 'my';
 
 export const copy = {
   en: {
-    pageTitle: 'Lin Yone — Computer Graphic & Printing',
-    pageDescription: 'Lin Yone Computer Graphic — a creative and printing studio in Yangon.',
+    pageTitle: 'Lin Yone — Computer Graphic & Printing Service in Yangon',
+    pageDescription: 'Lin Yone Computer Graphic — computer graphic design and printing services in Yangon, Myanmar. Business cards, posters, stickers, packaging, and branding.',
     navLabel: 'Main navigation',
     homeLabel: 'Lin Yone home',
     servicesNav: 'Services',
@@ -50,6 +50,7 @@ export const copy = {
     opensNewTab: 'opens in a new tab',
     backToTop: 'Back to top',
     mailSubject: 'Lin Yone print quote',
+    printSample: 'print sample',
     servicesList: ['Graphic design', 'Print production', 'Custom orders', 'Business cards', 'Posters & flyers', 'Stickers & labels', 'Packaging', 'Vouchers', 'Branding & graphics'],
   },
   my: {
@@ -79,7 +80,7 @@ export const copy = {
     nextSamples: 'နောက်နမူနာများ',
     dragHint: 'ဆွဲကြည့်ရန်',
     aboutOverline: 'လင်းယုန်အကြောင်း',
-    aboutTitle: 'ကောင်းတဲ့ စိတ်ကူးတွေ၊|တန်ဖိုးရှိတဲ့ လက်ရာတွေ။',
+    aboutTitle: 'ကောင်းမွန်တဲ့စိတ်ကူးတွေ၊|တန်ဖိုးရှိတဲ့ လက်ရာတွေ။',
     aboutParagraphOne: 'ဒီဇိုင်းစတင်ချိန်ကနေ ပုံနှိပ်ပြီးစီးတဲ့အထိ၊ ကွန်ပျူတာဂရပ်ဖစ်နဲ့ ပုံနှိပ်ထုတ်လုပ်မှုကို တစ်ဆက်တည်း ဂရုစိုက်ဆောင်ရွက်ပေးပါတယ်။',
     aboutParagraphTwo: 'သင့်လုပ်ငန်းရဲ့ လိုအပ်ချက်နဲ့ ကိုက်ညီတဲ့ ဒီဇိုင်းနဲ့ ပုံနှိပ်လက်ရာတွေကို ဈေးနှုန်းသင့်တင့်ပြီး အရည်အသွေးကောင်းမွန်စွာ ဖန်တီးပေးပါတယ်။ သင့်စိတ်ကူးတွေကို လက်တွေ့အကောင်အထည်ဖော်နိုင်ဖို့ အစမှအဆုံး အနီးကပ်ကူညီပေးပါတယ်။',
     aboutImageAlt: 'အရောင်စုံစာရွက် ပုံနှိပ်နေသော အကျယ်ပြန့်ပုံနှိပ်စက်',
@@ -101,6 +102,7 @@ export const copy = {
     opensNewTab: 'တဘ်အသစ်မှာ ဖွင့်ပါမယ်။',
     backToTop: 'စာမျက်နှာထိပ်သို့',
     mailSubject: 'လင်းယုန် ပုံနှိပ်ဈေးနှုန်း မေးမြန်းရန်',
+    printSample: 'ပုံနှိပ်နမူနာ',
     servicesList: ['ဂရပ်ဖစ်ဒီဇိုင်း', 'ပုံနှိပ်ထုတ်လုပ်မှု', 'စိတ်ကြိုက်အမှာစာများ', 'လုပ်ငန်းကတ်များ', 'ပိုစတာနဲ့ လက်ကမ်းစာစောင်များ', 'စတစ်ကာနဲ့ တံဆိပ်များ', 'ထုပ်ပိုးမှုဒီဇိုင်း', 'ဘောက်ချာများ', 'အမှတ်တံဆိပ်နဲ့ ဂရပ်ဖစ်ဒီဇိုင်း'],
   },
 } as const;

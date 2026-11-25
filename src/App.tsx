@@ -18,6 +18,9 @@ export default function App() {
     document.documentElement.lang = language;
     document.title = text.pageTitle;
     document.querySelector('meta[name="description"]')?.setAttribute('content', text.pageDescription);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', text.pageTitle);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', text.pageDescription);
+    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', language === 'my' ? 'my_MM' : 'en_US');
   }, [language, text]);
 
   return (

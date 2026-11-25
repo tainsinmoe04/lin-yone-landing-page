@@ -3,12 +3,12 @@ import '../../styles/services.css';
 import { copy, samples, type Language } from '../../i18n';
 
 const SAMPLES = [
-  { image: '/brand/services-carousel/business-cards-4x3.png' },
-  { image: '/brand/services-carousel/posters-flyers-4x3.png' },
-  { image: '/brand/services-carousel/stickers-labels-4x3.png' },
-  { image: '/brand/services-carousel/packaging-4x3.png' },
-  { image: '/brand/services-carousel/vouchers-lin-yone-cash-memo.jpg' },
-  { image: '/brand/services-carousel/branding-graphics-4x3.png' },
+  { image: '/brand/services-carousel/business-cards-4x3.webp', width: 1200, height: 900 },
+  { image: '/brand/services-carousel/posters-flyers-4x3.webp', width: 1200, height: 900 },
+  { image: '/brand/services-carousel/stickers-labels-4x3.webp', width: 1200, height: 900 },
+  { image: '/brand/services-carousel/packaging-4x3.webp', width: 1200, height: 900 },
+  { image: '/brand/services-carousel/vouchers-lin-yone-cash-memo.webp', width: 1536, height: 1152 },
+  { image: '/brand/services-carousel/branding-graphics-4x3.webp', width: 1200, height: 900 },
 ] as const;
 
 const wrap = (index: number) => (index + SAMPLES.length) % SAMPLES.length;
@@ -105,7 +105,15 @@ export default function Services({ language }: Props) {
             {shown.map(({ item, index, position }) => (
               <article className={`ly-product-card ly-product-card--${position === -1 ? 'left' : position === 0 ? 'center' : 'right'}`} key={item.image}>
                 <div className="ly-product-card__image">
-                  <img src={item.image} alt="" loading="lazy" decoding="async" draggable="false" />
+                  <img
+                    src={item.image}
+                    alt={`${samples[language][index][0]} — ${text.printSample}`}
+                    width={item.width}
+                    height={item.height}
+                    loading="lazy"
+                    decoding="async"
+                    draggable="false"
+                  />
                 </div>
                 <div className="ly-product-card__caption">
                   <h3>{samples[language][index][0]}</h3>

@@ -13,7 +13,7 @@ export default function HeroNavigation({ language, onLanguageChange }: Props) {
   return (
     <header className="ly-nav">
       <a className="ly-nav__home" href="#top" aria-label={text.homeLabel}>
-        <img src="/brand/Black Abstract Eagle-Star Logo.png" alt="" width="1536" height="1024" />
+        <img src="/brand/nav-eagle-star-logo.webp" alt="" width="264" height="176" />
       </a>
       <nav aria-label={text.navLabel}>
         <ul className="ly-nav__links">

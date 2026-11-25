@@ -9,7 +9,7 @@ export default function About({ language }: Props) {
   return (
     <section className="ly-about" id="about" aria-labelledby="ly-about-title">
       <div className="ly-about__visual">
-        <img src="/brand/e17a3ad3a004043bed309378b6b2cc12.jpg" alt={text.aboutImageAlt} loading="lazy" decoding="async" />
+        <img src="/brand/about-printer.webp" alt={text.aboutImageAlt} width="800" height="1200" loading="lazy" decoding="async" />
         <span>{text.aboutImageLabel}</span>
       </div>
       <div className="ly-about__copy">
